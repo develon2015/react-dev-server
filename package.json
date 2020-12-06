@@ -1,0 +1,39 @@
+{
+  "name": "@develon/react-dev-server",
+  "version": "0.0.1",
+  "description": "A React CLI tool.",
+  "bin": {
+    "rds": "./bin/main.js",
+    "react-dev-server": "./bin/main.js"
+  },
+  "scripts": {},
+  "dependencies": {
+    "@babel/core": "^7.12.9",
+    "@babel/plugin-proposal-class-properties": "^7.12.1",
+    "@babel/preset-env": "^7.12.7",
+    "@babel/preset-react": "^7.12.7",
+    "@babel/preset-typescript": "^7.12.7",
+    "@types/react-dom": "^17.0.0",
+    "babel-loader": "^8.2.2",
+    "colors": "^1.4.0",
+    "css-loader": "^5.0.1",
+    "file-loader": "^6.2.0",
+    "fs-extra": "^9.0.1",
+    "style-loader": "^2.0.0"
+  },
+  "author": "develon <develon@qq.com>",
+  "homepage": "https://github.com/develon2015/react-dev-server",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/develon2015/react-dev-server.git"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "keywords": [
+    "react",
+    "CLI",
+    "just like node-dev-server"
+  ],
+  "license": "MIT"
+}
