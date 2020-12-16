@@ -1,0 +1,11 @@
+{
+    "name": "app",
+    "version": "1.0.0",
+    "scripts": {
+        "setup": "rds --eject && yarn add -D @types/react @types/react-dom",
+        "start:dev": "webpack serve",
+        "build": "wbepack --env production",
+        "rebuild": "wbepack --env rebuild"
+    },
+    "license": "MIT"
+}

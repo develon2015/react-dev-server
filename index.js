@@ -20,11 +20,11 @@ function create(project) {
  */
 function init(project) {
     console.info(`Init project ${project}`);
-    const DIR_SRC = path.resolve(project, 'src');
-    const DIR_SRC_TEMPLATE = path.resolve(__dirname, './public/src'); // src模板
-    fs.copySync(DIR_SRC_TEMPLATE, DIR_SRC);
+    const DIR_APP = path.resolve(project, '.');
+    const DIR_APP_TEMPLATE = path.resolve(__dirname, './public/app'); // app模板
+    fs.copySync(DIR_APP_TEMPLATE, DIR_APP);
     eject(project);
-    console.log(`Project init succeed! To continue, please:\n\ncd ${project}\nyarn init -y\nyarn add @types/react @types/react-dom\nwebpack serve`);
+    console.log(`Project init succeed! To continue, please:\n\ncd ${project}\nyarn setup\nyarn start:dev`);
 }
 
 function main() {

@@ -1,6 +1,6 @@
 {
   "name": "@develon/react-dev-server",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "A React CLI tool.",
   "bin": {
     "rds": "./bin/main.js",
@@ -13,7 +13,6 @@
     "@babel/preset-env": "^7.12.7",
     "@babel/preset-react": "^7.12.7",
     "@babel/preset-typescript": "^7.12.7",
-    "@types/react-dom": "^17.0.0",
     "babel-loader": "^8.2.2",
     "colors": "^1.4.0",
     "css-loader": "^5.0.1",

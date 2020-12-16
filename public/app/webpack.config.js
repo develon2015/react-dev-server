@@ -3,6 +3,12 @@
  *
  * @author Develon (https://github.com/develon2015)
  */
+const {
+    $babel_loader,
+    $css_loader,
+    $style_loader,
+    $file_loader,
+} = require('./rds-loader.js'); // rds plugins
 
 const path = require('path');
 
@@ -26,9 +32,9 @@ const CONFIG = {
     },
     module: {
         rules: [
-            { test: /\.css$/, use: [`@STYLE_LOADER`, `@CSS_LOADER` + '?modules'] },
-            { test: /\.(html|png|jpg|ico)$/, use: `@FILE_LOADER` + '?context=src&name=[path][name].[ext]' },
-            { test: /\.tsx?$/, exclude: /node_modules/, loader: `@BABEL_LOADER` }, // @BABEL_LOADER及其预设由rds提供
+            { test: /\.css$/, use: [$style_loader, $css_loader + '?modules'] },
+            { test: /\.(html|png|jpg|ico)$/, use: $file_loader + '?context=src&name=[path][name].[ext]' },
+            { test: /\.tsx?$/, exclude: /node_modules/, use: $babel_loader }, // @BABEL_LOADER及其预设由rds提供
         ],
     },
     externals: {
