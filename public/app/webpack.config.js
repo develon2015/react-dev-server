@@ -33,7 +33,8 @@ const CONFIG = {
     },
     module: {
         rules: [
-            { test: /\.css$/, use: [$style_loader, $css_loader + '?modules'] },
+            { test: /\.global\.css$/, use: [$style_loader, $css_loader] },
+            { test: /(?<!\.global)\.css$/, use: [$style_loader, $css_loader + '?modules'] },
             { test: /\.(html|png|jpg|ico)$/, use: $file_loader + '?context=src&name=[path][name].[ext]' },
             { test: /\.tsx?$/, exclude: /node_modules/, use: $babel_loader }, // @BABEL_LOADER及其预设由rds提供
         ],
