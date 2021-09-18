@@ -37,7 +37,21 @@ const CONFIG = {
     module: {
         rules: [
             { test: /\.global\.css$/, use: [$style_loader, $css_loader] },
-            { test: /(?<!\.global)\.css$/, use: [$style_loader, $css_loader + '?modules'] },
+            {
+                test: /(?<!\.global)\.css$/,
+                use: [
+                    $style_loader,
+                    {
+                        loader: $css_loader,
+                        options: {
+                            modules: {
+                                localIdentContext: path.resolve(__dirname, "src"),
+                                localIdentName: '[name]__[local]-[hash:base64:5]',
+                            }
+                        }
+                    }
+                ]
+            },
             { test: /\.(html|png|jpg|ico)$/, use: $file_loader + '?context=src&name=[path][name].[ext]' },
             { test: /\.(ts|js)x?$/, exclude: /node_modules/, use: $babel_loader }, // @BABEL_LOADER及其预设由rds提供
         ],
